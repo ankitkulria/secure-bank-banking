@@ -1,42 +1,179 @@
-# Secure Bank Banking System
+# 🏦 Secure Bank Banking Management System
 
-A full-stack Banking Management System built using Spring Boot, MySQL, JWT Authentication, HTML, CSS, JavaScript and Bootstrap.
+A full-stack Banking Management System built using **Java 21**, **Spring Boot**, **Spring Security**, **JWT Authentication**, **MySQL**, **HTML**, **CSS**, **JavaScript**, and **Bootstrap**.
 
-## Project Structure
+The system provides secure banking operations such as account management, fund transfers, transaction history, loan management, EMI payments, and an admin dashboard for managing users and loans.
 
+---
+
+## 🚀 Features
+
+### 👤 User Features
+
+* User Registration & Login
+* JWT Based Authentication
+* Create Multiple Bank Accounts
+* Deposit Money
+* Withdraw Money
+* Fund Transfer Between Accounts
+* View Account Details
+* Transaction History with Pagination
+* Apply for Loans
+* EMI Payment System
+* Loan Status Tracking
+* Email Notifications
+
+### 🛠️ Admin Features
+
+* Secure Admin Login
+* View All Users
+* View All Accounts
+* View All Loans
+* Approve Loan Requests
+* Reject Loan Requests
+* Monitor Reserve Bank Account
+* Dashboard Statistics
+
+  * Total Users
+  * Total Accounts
+  * Active Loans
+  * Pending Loans
+
+---
+
+## 🏗️ Project Structure
+
+```text
 secure-bank-banking/
 
-├── BankManagementSystem (Backend)
+├── BankManagementSystem/     # Spring Boot Backend
+│
+├── BankingFrontend/          # HTML, CSS, JS Frontend
+│
+└── README.md
+```
 
-└── BankingFrontend (Frontend)
+---
 
-## Features
+## 💻 Tech Stack
 
-- JWT Authentication
-- Account Management
-- Deposit & Withdraw
-- Fund Transfer
-- Transaction History
-- Loan Management
-- EMI Payments
-- Admin Dashboard
-- Email Notifications
+### Backend
 
-## Tech Stack
+* Java 21
+* Spring Boot
+* Spring Security
+* Spring Data JPA
+* Hibernate
+* MySQL
+* Maven
+* JWT Authentication
+* Lombok
+* Jakarta Validation
 
-Backend:
-- Java 17
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- MySQL
+### Frontend
 
-Frontend:
-- HTML
-- CSS
-- JavaScript
-- Bootstrap
+* HTML5
+* CSS3
+* JavaScript (ES6)
+* Bootstrap 5
 
-## Author
+### Database
 
-Ankit Suthar
+* MySQL
+
+---
+
+## 🔐 Security Features
+
+* JWT Authentication
+* Role Based Authorization
+* Protected APIs
+* Password Encryption
+* Secure User Sessions
+
+---
+
+## 📊 Banking Modules
+
+### Account Management
+
+* Create Savings Account
+* Create Current Account
+* Create Loan Account
+* Account Balance Tracking
+
+### Transaction Management
+
+* Deposit
+* Withdrawal
+* Fund Transfer
+* Transaction History
+* Pagination Support
+
+### Loan Management
+
+* Apply Loan
+* Loan Approval Workflow
+* EMI Calculation
+* EMI Payments
+* Loan Closure
+* Loan Status Tracking
+
+---
+
+## 📧 Email Notifications
+
+The system automatically sends emails for:
+
+* Loan Approval
+* Loan Rejection
+* Loan Closure
+* Important Banking Events
+
+---
+
+## 🎯 Learning Outcomes
+
+This project helped me gain practical experience with:
+
+* Spring Boot Application Development
+* REST API Design
+* JWT Authentication
+* Spring Security
+* Database Design
+* JPA & Hibernate
+* Frontend Integration
+* Admin Dashboard Development
+* Real-world Banking Workflows
+
+---
+
+## 👨‍💻 Author
+
+**Ankit Suthar**
+
+Aspiring Java Backend Developer
+
+Skills:
+
+* Java
+* Spring Boot
+* Spring Security
+* Hibernate
+* JPA
+* MySQL
+* REST APIs
+* HTML
+* CSS
+* JavaScript
+
+---
+
+## ⭐ Future Enhancements
+
+* Docker Support
+* Deployment on Cloud
+* Swagger API Documentation
+* Account Statements PDF Export
+* Scheduled EMI Reminders
+* Advanced Analytics Dashboard
