@@ -1,0 +1,353 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | SecureBank</title>
+
+    ```
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+    ```
+  </head>
+
+  <body>
+    <!-- Toast Container -->
+    <div
+      class="toast-container position-fixed top-0 end-0 p-3"
+      id="toastContainer"
+    ></div>
+
+    ```
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div>
+        <h2 class="logo">SecureBank</h2>
+
+        <ul class="nav-links">
+          <li><a href="#" id="dashboardLink">Dashboard</a></li>
+          <li><a href="#" id="accountsLink">Accounts</a></li>
+          <li><a href="#" id="loanLink">Loan Services</a></li>
+        </ul>
+      </div>
+
+      <button id="logoutBtn" class="btn logout-btn">Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div>
+          <h3 id="welcomeMessage">Welcome Back 👋</h3>
+          <p id="userEmail"></p>
+        </div>
+      </div>
+
+      <!-- Accounts Section -->
+      <section id="accountsSection" class="accounts-section">
+        <div class="section-header">
+          <h4>Your Accounts</h4>
+
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#createAccountModal"
+          >
+            + Create Account
+          </button>
+        </div>
+
+        <div class="row g-4" id="accountsContainer"></div>
+
+        <!-- Transaction History -->
+        <section class="transactions-section mt-5">
+          <div class="section-header">
+            <div>
+              <h4>Transaction History</h4>
+
+              <small id="selectedAccountInfo" class="text-muted">
+                Select an account to view history
+              </small>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Description</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+
+              <tbody id="transactionTableBody">
+                <tr>
+                  <td colspan="4" class="text-center">
+                    Select an account and click History
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            id="paginationContainer"
+            class="d-flex justify-content-center mt-3"
+          ></div>
+        </section>
+      </section>
+
+      <!-- Loan Section -->
+      <section id="loanSection" class="mt-5" style="display: none">
+        <div class="section-header">
+          <h4>Loan Services</h4>
+
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#applyLoanModal"
+          >
+            Apply Loan
+          </button>
+        </div>
+
+        <div id="loanContainer"></div>
+      </section>
+    </div>
+
+    <!-- APPLY LOAN MODAL -->
+    <div class="modal fade" id="applyLoanModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Apply Loan</h5>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="applyLoanForm">
+              <div class="mb-3">
+                <label class="form-label">Loan Amount</label>
+
+                <input
+                  type="number"
+                  id="loanAmount"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Duration (Months)</label>
+
+                <input
+                  type="number"
+                  id="durationMonths"
+                  class="form-control"
+                  min="6"
+                  max="360"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Purpose</label>
+
+                <input type="text" id="purpose" class="form-control" required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Repayment Account</label>
+
+                <select
+                  id="repaymentAccount"
+                  class="form-select"
+                  required
+                ></select>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">
+                Apply Loan
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CREATE ACCOUNT MODAL -->
+    <div class="modal fade" id="createAccountModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Create Account</h5>
+
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="createAccountForm">
+              <div class="mb-3">
+                <label class="form-label">Account Type</label>
+
+                <select id="accountType" class="form-select">
+                  <option value="SAVINGS">SAVINGS</option>
+                  <option value="CURRENT">CURRENT</option>
+                  <option value="LOAN">LOAN</option>
+                </select>
+              </div>
+
+              <button class="btn btn-primary w-100" type="submit">
+                Create Account
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEPOSIT MODAL -->
+    <div class="modal fade" id="depositModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Deposit Money</h5>
+
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="depositForm">
+              <input type="hidden" id="depositAccountId" />
+
+              <div class="mb-3">
+                <label>Amount</label>
+
+                <input
+                  type="number"
+                  class="form-control"
+                  id="depositAmount"
+                  required
+                />
+              </div>
+
+              <button class="btn btn-success w-100">Deposit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WITHDRAW MODAL -->
+    <div class="modal fade" id="withdrawModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Withdraw Money</h5>
+
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="withdrawForm">
+              <input type="hidden" id="withdrawAccountId" />
+
+              <div class="mb-3">
+                <label>Amount</label>
+
+                <input
+                  type="number"
+                  class="form-control"
+                  id="withdrawAmount"
+                  required
+                />
+              </div>
+
+              <button class="btn btn-warning w-100">Withdraw</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANSFER MODAL -->
+    <div class="modal fade" id="transferModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Transfer Money</h5>
+
+            <button class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="transferForm">
+              <input type="hidden" id="fromAccountId" />
+
+              <input type="hidden" id="verifiedAccountId" />
+
+              <div class="mb-3">
+                <label>Target Account Number</label>
+
+                <div class="input-group">
+                  <input
+                    type="text"
+                    id="targetAccountNumber"
+                    class="form-control"
+                  />
+
+                  <button
+                    type="button"
+                    id="verifyAccountBtn"
+                    class="btn btn-primary"
+                  >
+                    Verify
+                  </button>
+                </div>
+              </div>
+
+              <div id="accountInfo" class="alert alert-success d-none"></div>
+
+              <div class="mb-3">
+                <label>Amount</label>
+
+                <input
+                  type="number"
+                  id="transferAmount"
+                  class="form-control"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                id="transferBtn"
+                class="btn btn-dark w-100"
+                disabled
+              >
+                Transfer
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/dashboard.js"></script>
+    ```
+  </body>
+</html>

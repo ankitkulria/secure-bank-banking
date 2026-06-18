@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fb;
+    color: #1e293b;
+}
+
+/* =========================
+   Navbar
+========================= */
+
+.custom-navbar{
+    background: rgba(13, 27, 42, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 16px 0;
+    transition: 0.3s;
+}
+
+.navbar-brand{
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-link{
+    color: white !important;
+    margin-left: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    color: #4cc9f0 !important;
+}
+
+.navbar .btn{
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero-section{
+    min-height: 100vh;
+    background:
+            linear-gradient(rgba(13,27,42,0.85),
+            rgba(27,38,59,0.92)),
+            url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1400');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-top: 90px;
+}
+
+.hero-title{
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.hero-text{
+    font-size: 18px;
+    line-height: 1.9;
+    color: #d6d6d6;
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+.hero-buttons .btn{
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hero-image{
+    width: 100%;
+    max-width: 420px;
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+}
+
+/* =========================
+   Common Sections
+========================= */
+
+.features-section,
+.services-section,
+.security-section{
+    padding: 110px 0;
+}
+
+.section-title{
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #0f172a;
+}
+
+.section-subtitle{
+    color: #64748b;
+    font-size: 17px;
+}
+
+/* =========================
+   Feature Cards
+========================= */
+
+.feature-card{
+    background: white;
+    border-radius: 18px;
+    padding: 40px 28px;
+    transition: 0.35s;
+    height: 100%;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.feature-card h4{
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #0f172a;
+}
+
+.feature-card p{
+    color: #64748b;
+    line-height: 1.8;
+}
+
+.feature-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   Services
+========================= */
+
+.services-section{
+    background-color: #ffffff;
+}
+
+.service-box{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color: white;
+    border-radius: 18px;
+    padding: 45px 25px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 8px 25px rgba(15,23,42,0.2);
+}
+
+.service-box h5{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.service-box:hover{
+    transform: translateY(-8px);
+}
+
+/* =========================
+   Security Section
+========================= */
+
+.security-section{
+    background-color: #f8fafc;
+}
+
+.security-image{
+    width: 100%;
+    max-width: 420px;
+}
+
+.security-text{
+    font-size: 18px;
+    line-height: 1.9;
+    color: #475569;
+}
+
+/* =========================
+   Footer
+========================= */
+
+.footer{
+    background-color: #0f172a;
+    color: white;
+    padding: 28px 0;
+    font-size: 15px;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width: 992px){
+
+    .hero-section{
+        text-align: center;
+    }
+
+    .hero-title{
+        font-size: 48px;
+    }
+
+    .hero-text{
+        margin: auto auto 35px;
+    }
+
+    .hero-image{
+        margin-top: 50px;
+    }
+}
+
+@media(max-width: 768px){
+
+    .hero-title{
+        font-size: 38px;
+    }
+
+    .section-title{
+        font-size: 32px;
+    }
+
+    .hero-buttons .btn{
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,12 @@
+# Backend
+BankManagementSystem/target/
+
+BankManagementSystem/.idea/
+BankManagementSystem/*.iml
+
+# Frontend
+BankingFrontend/.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db

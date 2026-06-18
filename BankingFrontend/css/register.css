@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+
+.register-section{
+    min-height: 100vh;
+    background:
+            linear-gradient(rgba(15,23,42,0.82),
+            rgba(15,23,42,0.92)),
+            url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Card */
+
+.register-card{
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
+    backdrop-filter: blur(14px);
+    border-radius: 24px;
+    padding: 50px 40px;
+    color: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* Title */
+
+.register-title{
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.register-subtitle{
+    color: #d1d5db;
+    font-size: 15px;
+}
+
+/* Inputs */
+
+.custom-input{
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    padding: 14px 16px;
+    border-radius: 12px;
+}
+
+.custom-input::placeholder{
+    color: #d1d5db;
+}
+
+.custom-input:focus{
+    background: rgba(255,255,255,0.18);
+    color: white;
+    box-shadow: none;
+    border-color: #4cc9f0;
+}
+
+/* Labels */
+
+.form-label{
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Button */
+
+.register-btn{
+    background: linear-gradient(to right,#2563eb,#4cc9f0);
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+
+.register-btn:hover{
+    transform: translateY(-3px);
+    opacity: 0.95;
+}
+
+/* Bottom Text */
+
+.bottom-text{
+    color: #d1d5db;
+}
+
+.bottom-text a{
+    color: #4cc9f0;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .register-card{
+        padding: 40px 25px;
+    }
+
+    .register-title{
+        font-size: 34px;
+    }
+}

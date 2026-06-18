@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f1f5f9;
+    display:flex;
+}
+
+/* ======================
+   SIDEBAR
+====================== */
+
+.sidebar{
+
+    width:260px;
+    min-height:100vh;
+
+    background:#0f172a;
+
+    color:white;
+
+    padding:30px 20px;
+
+    position:fixed;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.logo{
+
+    font-size:30px;
+    font-weight:700;
+
+    margin-bottom:50px;
+}
+
+.nav-links{
+
+    list-style:none;
+}
+
+.nav-links li{
+
+    margin-bottom:20px;
+}
+
+.nav-links a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+
+    color:#38bdf8;
+}
+
+.logout-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:12px;
+}
+
+.logout-btn:hover{
+
+    background:#dc2626;
+}
+
+/* ======================
+   MAIN CONTENT
+====================== */
+
+.main-content{
+
+    margin-left:260px;
+
+    width:calc(100% - 260px);
+
+    padding:35px;
+}
+
+.topbar{
+
+    margin-bottom:35px;
+}
+
+.topbar h3{
+
+    font-weight:700;
+}
+
+.topbar p{
+
+    color:#64748b;
+}
+
+/* ======================
+   SECTION
+====================== */
+
+.section-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+/* ======================
+   ACCOUNT CARD
+====================== */
+
+.account-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+    transition:.3s;
+
+    height:100%;
+}
+
+.account-card:hover{
+
+    transform:translateY(-5px);
+}
+
+.account-type{
+
+    font-size:13px;
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+.balance{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    margin:15px 0;
+}
+
+.account-number{
+
+    color:#64748b;
+
+    font-size:14px;
+}
+
+/* ======================
+   ACCOUNT TYPE COLORS
+====================== */
+
+.savings-card{
+
+    border-left:6px solid #2563eb;
+}
+
+.current-card{
+
+    border-left:6px solid #111827;
+}
+
+.loan-card{
+
+    border-left:6px solid #ea580c;
+}
+
+/* ======================
+   BUTTON GROUP
+====================== */
+
+.action-buttons{
+
+    margin-top:15px;
+}
+
+.action-buttons .btn{
+
+    margin-bottom:8px;
+}
+
+/* ======================
+   TRANSACTION SECTION
+====================== */
+
+.transactions-section{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.table{
+
+    margin-bottom:0;
+}
+
+.table th{
+
+    font-weight:600;
+
+    color:#334155;
+}
+
+.table td{
+
+    vertical-align:middle;
+}
+
+/* ======================
+   BADGES
+====================== */
+
+.tx-deposit{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.tx-withdraw{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+.tx-transfer{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+}
+
+/* ======================
+   MODALS
+====================== */
+
+.modal-content{
+
+    border:none;
+
+    border-radius:18px;
+}
+
+.modal-header{
+
+    border-bottom:1px solid #e2e8f0;
+}
+
+.modal-footer{
+
+    border-top:1px solid #e2e8f0;
+}
+
+/* ======================
+   TOASTS
+====================== */
+
+.toast{
+
+    border:none;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.toast-success{
+
+    background:#22c55e;
+
+    color:white;
+}
+
+.toast-danger{
+
+    background:#ef4444;
+
+    color:white;
+}
+
+.toast-warning{
+
+    background:#f59e0b;
+
+    color:white;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+@media(max-width:992px){
+
+    .sidebar{
+
+        display:none;
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+        width:100%;
+    }
+}
+
+@media(max-width:768px){
+
+    .balance{
+
+        font-size:28px;
+    }
+
+    .section-header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+        align-items:flex-start;
+    }
+}
